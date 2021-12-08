@@ -7,19 +7,17 @@ function App() {
 
   const [products, setProducts] = useState();
 
-// useEffect(() => {
-//   fetch('https://fakestoreapi.com/products')
-//   .then(res=>res.json())
-//   .then(productsArray=>{
-//     const newProducts = productsArray.map((product) => 
-//     return product.title;
-//   )});
-// });
+useEffect(() => {
+  fetch('https://fakestoreapi.com/products')
+  .then((res) => res.json())
+  .then((productsArray) => {
+    const products = productsArray.map((product) => product.title);
+    setProducts(products);
+  });
+}, []);
 
   return (
-    <div>
-      <SearchBar/>
-    </div>
+    <SearchBar products={products}/>
   );
 }
 

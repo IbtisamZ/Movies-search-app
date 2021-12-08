@@ -1,28 +1,27 @@
 import React, { useState } from 'react';
 import './SearchBar.css'
 
-const SearchBar = () => {
+const SearchBar = (props) => {
+    const {
+        products
+    } = props;
 
     const [searchValue, setSearchValue] = useState('');
 
-    const products = [
-        'Apple',
-        'Banana',
-        'Orange',
-        'Fig',
-        'Kiwi',
-        'Berries',
-    ];
     const inputChange = (event) => {
-        setSearchValue(event.target.value);
+        setSearchValue(event.target.value.toLowerCase());
     };
 
-    const filteredProducts = products.filter((product) => {
-        return product.includes(searchValue);
+    const filteredProducts = products && products.filter((product) => {
+        return product.toLowerCase().includes(searchValue);
     });
 
-    const allProducts = filteredProducts.map((product) => {
-        return <li key={product}>{product}</li>;
+    const allProducts = filteredProducts && filteredProducts.map((product) => {
+        return (
+        <>
+        <div className="products" key={product}>{product}</div>
+        <div className="elm-container"/>
+        </>);
     });
 
     const clearSearchBar = () => {
@@ -30,13 +29,20 @@ const SearchBar = () => {
     };
 
     return (
-        <div className="">
-            <input type="text" value={searchValue} placeholder="Search" onChange={inputChange}/>
-            <button onClick={clearSearchBar}>Clear</button>
-            <ul>
-            {allProducts}
-            </ul>
+        <>
+        <div className="search-container">
+        <p className="">You can search whatever you want!</p>
+        <div className="search-bar">
+        <input className="search-bar-style" type="text" value={searchValue} placeholder="Search..." onChange={inputChange}/>
+        <button className="button-style" onClick={clearSearchBar}>Clear</button>
         </div>
+        <div>
+        <ul>
+            {allProducts}
+        </ul>
+        </div>
+        </div>
+        </>
 
     )
 };
