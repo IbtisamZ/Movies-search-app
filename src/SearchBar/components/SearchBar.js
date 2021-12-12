@@ -40,7 +40,7 @@ const SearchBar = (props) => {
         <div className="search-container ">
             <div className="header-background">
                 <p>Hello there, <br/>
-                Find your university by searching below!</p>
+                Go ahead and search for names down below!</p>
             </div>
             <div className="search-bar">
             <input className="search-bar-style" type="text" value={searchValue} placeholder="Search..." onChange={inputChange}/>
