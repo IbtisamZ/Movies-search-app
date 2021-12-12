@@ -1,23 +1,25 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import './SearchBar/SearchBar'
-import SearchBar from './SearchBar/SearchBar';
+import './SearchBar/components/SearchBar'
+import SearchBar from './SearchBar/components/SearchBar';
 
 function App() {
 
-  const [products, setProducts] = useState();
+  const [items, setItems] = useState();
+  const [loading, setLoading] = useState(false);
 
+// fetch data
 useEffect(() => {
-  fetch('https://fakestoreapi.com/products')
+  fetch('https://fakestoreapi.com/users')
   .then((res) => res.json())
-  .then((productsArray) => {
-    const products = productsArray.map((product) => product.title);
-    setProducts(products);
+  .then((data) => {
+    setItems(data);
   });
+  setLoading(false);
 }, []);
 
   return (
-    <SearchBar products={products}/>
+    <SearchBar items={items} loading={loading}/>
   );
 }
 
