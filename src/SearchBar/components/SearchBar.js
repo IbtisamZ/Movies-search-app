@@ -18,15 +18,15 @@ const SearchBar = (props) => {
     // filter data
     const filteredItems = items && items.filter((i) => {
         return (
-             i.name.firstname.toLowerCase().includes(searchValue.toLowerCase()) ||
-             i.name.lastname.toLowerCase().includes(searchValue.toLowerCase()));
+             i.title.toLowerCase().includes(searchValue.toLowerCase()));
+            //  i.name.lastname.toLowerCase().includes(searchValue.toLowerCase()));
     });
 
     // display data
     const allItems = filteredItems && filteredItems.map((item) => {
         return (
         <>
-        <div className="items" key={item.id}>{item.name.firstname} {item.name.lastname}</div>
+        <div className="items" key={item.id}>{item.title}</div>
         <div className="elm-container"/>
         </>);
     });
@@ -40,7 +40,7 @@ const SearchBar = (props) => {
         <div className="search-container ">
             <div className="header-background">
                 <p>Hello there, <br/>
-                Go ahead and search for names down below!</p>
+                 Go ahead and search down below!</p>
             </div>
             <div className="search-bar">
             <input className="search-bar-style" type="text" value={searchValue} placeholder="Search..." onChange={inputChange}/>

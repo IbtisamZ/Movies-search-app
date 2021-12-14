@@ -43,7 +43,7 @@
 }
 
 p {
-  margin-top: 10rem;
+  margin-top: 5rem;
   font-size: 40px;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   /* font-family: 'Anonymous Pro', monospace;  */
@@ -60,9 +60,9 @@ input[type=text] {
 }
 
 .header-background {
-  background-image: linear-gradient(to right, #2c3e50, #4ca1af);
+  background-image: linear-gradient(to right, #0F2027, #203A43, #2C5364);
   width: 100%;
-  height: 25rem;
+  height: 15rem;
   /* border-bottom: solid 5px #71aabf;; */
 }
 

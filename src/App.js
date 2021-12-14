@@ -10,7 +10,7 @@ function App() {
 
 // fetch data
 useEffect(() => {
-  fetch('https://fakestoreapi.com/users')
+  fetch('https://fakestoreapi.com/products')
   .then((res) => res.json())
   .then((data) => {
     setItems(data);
