@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './SearchBar.css'
 import Loader from "react-loader-spinner";
 
@@ -6,33 +6,35 @@ const SearchBar = (props) => {
     const {
         items,
         loading,
+        setItems,
+        searchValue,
+        setSearchValue
     } = props;
-
-    // declate states
-    const [searchValue, setSearchValue] = useState('');
 
     const inputChange = (event) => {
         setSearchValue(event.target.value);
     };
 
-    // filter data
-    const filteredItems = items && items.filter((i) => {
-        return (
-             i.title.toLowerCase().includes(searchValue.toLowerCase()));
-            //  i.name.lastname.toLowerCase().includes(searchValue.toLowerCase()));
-    });
+    // const filteredItems = items && items.filter((i) => {
+    //     return (
+    //          i.Title.toLowerCase().includes(searchValue.toLowerCase()));
+    // });
 
     // display data
-    const allItems = filteredItems && filteredItems.map((item) => {
+    const allItems =  items && items.map((item) => {
         return (
         <>
-        <div className="items" key={item.id}>{item.title}</div>
-        <div className="elm-container"/>
+        <div className="items" key={item.id}>
+        <img className="" alt ="Img not found" height="400" width="300" src={item.Poster} onerror="if (this.src != 'error.jpg') this.src = './not-found.png';"></img>
+        <div  className="movie-title">{item.Title} {item.Year}</div>
+        <div  className="movie-title">{item.Type}</div>
+        </div>
         </>);
     });
 
     const clearSearchBar = () => {
         setSearchValue('');
+        setItems([]);
     };
 
     return (
@@ -40,14 +42,14 @@ const SearchBar = (props) => {
         <div className="search-container ">
             <div className="header-background">
                 <p>Hello there, <br/>
-                 Go ahead and search down below!</p>
+                 Go ahead and search for your favorite movies. </p>
             </div>
             <div className="search-bar">
             <input className="search-bar-style" type="text" value={searchValue} placeholder="Search..." onChange={inputChange}/>
             <button className="button-style" onClick={clearSearchBar}>Clear</button>
             </div>
-            <div>
-                {loading ? (<Loader type="Oval" color="#136a8a" height={50} width={50} />) :
+            <div className="all-items">
+                {loading ? (<Loader type="Oval" color="#fff" height={50} width={50} />) :
                 allItems}
             </div>
         </div>

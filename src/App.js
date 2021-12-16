@@ -5,21 +5,32 @@ import SearchBar from './SearchBar/components/SearchBar';
 
 function App() {
 
-  const [items, setItems] = useState();
+  const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
 
 // fetch data
 useEffect(() => {
-  fetch('https://fakestoreapi.com/products')
-  .then((res) => res.json())
-  .then((data) => {
-    setItems(data);
-  });
-  setLoading(false);
-}, []);
+  getMovieData(searchValue);
+}, [searchValue]);
 
+const getMovieData = async (searchValue) => {
+  setLoading(true);
+  const response = await fetch(`http://www.omdbapi.com/?s=${searchValue}&apikey=263d22d8`);
+  const responseJson = await response.json();
+  if (responseJson.Search) {
+    setItems(responseJson.Search);
+    }
+  setLoading(false);
+  console.log('sds',responseJson.Search);
+}
   return (
-    <SearchBar items={items} loading={loading}/>
+    <SearchBar
+     searchValue={searchValue}
+     setSearchValue={setSearchValue}
+     items={items}
+     setItems={setItems}
+     loading={loading}/>
   );
 }
 
