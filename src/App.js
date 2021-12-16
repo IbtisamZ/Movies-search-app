@@ -16,7 +16,7 @@ useEffect(() => {
 
 const getMovieData = async (searchValue) => {
   setLoading(true);
-  const response = await fetch(`http://www.omdbapi.com/?s=${searchValue}&apikey=263d22d8`);
+  const response = await fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=263d22d8`);
   const responseJson = await response.json();
   if (responseJson.Search) {
     setItems(responseJson.Search);
