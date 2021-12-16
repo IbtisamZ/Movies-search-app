@@ -1,6 +1,7 @@
 import React from 'react';
 import './SearchBar.css'
 import Loader from "react-loader-spinner";
+import PlaceHolderMovies from './PlaceHolderMovies';
 
 const SearchBar = (props) => {
     const {
@@ -15,6 +16,7 @@ const SearchBar = (props) => {
         setSearchValue(event.target.value);
     };
 
+    console.log('sdfdsadfsa', PlaceHolderMovies);
     // const filteredItems = items && items.filter((i) => {
     //     return (
     //          i.Title.toLowerCase().includes(searchValue.toLowerCase()));
@@ -25,7 +27,18 @@ const SearchBar = (props) => {
         return (
         <>
         <div className="items" key={item.id}>
-        <img className="" alt ="Img not found" height="400" width="300" src={item.Poster} onerror="if (this.src != 'error.jpg') this.src = './not-found.png';"></img>
+        <img className="" alt ="Img not found" height="400" width="300" src={item.Poster}></img>
+        <div  className="movie-title">{item.Title} {item.Year}</div>
+        <div  className="movie-title">{item.Type}</div>
+        </div>
+        </>);
+    });
+
+    const dummyData =  PlaceHolderMovies && PlaceHolderMovies.map((item) => {
+        return (
+        <>
+        <div className="items">
+        <img className="" alt ="Img not found" height="400" width="300" src={item.Poster}></img>
         <div  className="movie-title">{item.Title} {item.Year}</div>
         <div  className="movie-title">{item.Type}</div>
         </div>
@@ -49,8 +62,14 @@ const SearchBar = (props) => {
             <button className="button-style" onClick={clearSearchBar}>Clear</button>
             </div>
             <div className="all-items">
+                {items.length === 0 ? 
+                dummyData :
+                <>
                 {loading ? (<Loader type="Oval" color="#fff" height={50} width={50} />) :
                 allItems}
+                </>
+                
+            }
             </div>
         </div>
         </>

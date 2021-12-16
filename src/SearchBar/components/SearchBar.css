@@ -12,7 +12,7 @@
   }
 
 .search-bar-style {
-  height: 60px;
+  height: 58px;
   width: 950px;
   /* margin: 0 15px; */
   border: none;
@@ -22,7 +22,7 @@
   }
 
 .button-style {
-  height: 59px;
+  height: 60px;
   width: 150px;
   /* padding: 0 30px; */
   margin: 0 1.5rem;
@@ -30,7 +30,7 @@
   border: none;
   background-color: #603123;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -94,11 +94,6 @@ input[type=text] {
   width: 100%;
   height: 30rem;
   border-color: white solid 5px;
-  transition: 500ms linear; 
-}
-
-.header-background:hover {
-  transform: scaleX(1.05);
 }
 
 .header-text {
