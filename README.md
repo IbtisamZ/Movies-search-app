@@ -1,10 +1,9 @@
-# Search app using React js
+# Movie search app
 
-In this small project, we build a search bar to filter data based on user input. Also, we get to work with Javascript fetch API to get data from an external source.
+In this small project, we build a movie search website that enables user to search and filter data based on input. Also, we get to work with Javascript fetch API to get data from an open api.
+
+
+#### Api used in this app: [OMDb API](omdbapi.com)
 
 ---
-This project was created using [Create React App](https://github.com/facebook/create-react-app).
-
-To run the app: `npm start`
-
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## [Click here to view the demo](https://ibtisamz.github.io/Search-items-react.js/).
