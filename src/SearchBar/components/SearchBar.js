@@ -16,8 +16,6 @@ const SearchBar = (props) => {
         setSearchValue(event.target.value);
     };
 
-    console.log('sdfdsadfsa', PlaceHolderMovies);
-
     // display data
     const allItems =  items && items.map((item) => {
         return (

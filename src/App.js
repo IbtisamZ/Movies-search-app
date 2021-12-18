@@ -22,7 +22,6 @@ const getMovieData = async (searchValue) => {
     setItems(responseJson.Search);
     }
   setLoading(false);
-  console.log('sds',responseJson.Search);
 }
   return (
     <SearchBar
