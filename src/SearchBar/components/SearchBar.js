@@ -17,10 +17,6 @@ const SearchBar = (props) => {
     };
 
     console.log('sdfdsadfsa', PlaceHolderMovies);
-    // const filteredItems = items && items.filter((i) => {
-    //     return (
-    //          i.Title.toLowerCase().includes(searchValue.toLowerCase()));
-    // });
 
     // display data
     const allItems =  items && items.map((item) => {
@@ -68,7 +64,6 @@ const SearchBar = (props) => {
                 {loading ? (<Loader type="Oval" color="#fff" height={50} width={50} />) :
                 allItems}
                 </>
-                
             }
             </div>
         </div>
