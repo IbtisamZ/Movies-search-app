@@ -1,36 +1,57 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import './SearchBar/components/SearchBar'
-import SearchBar from './SearchBar/components/SearchBar';
+import CssBaseline from '@mui/material/CssBaseline';
+import createTheme from '@mui/material/styles/createTheme';
+import ThemeProvider from '@mui/material/styles/ThemeProvider';
+import MovieSearchApp from './components/MovieSearchApp/MovieSearchApp';
 
-function App() {
+const App = () => {
+  const theme = createTheme({
+    palette: {
+      background: {
+        default: '#000',
+      },
+      primary: {
+        main: '#000',
+      },
+      text: {
+        main: '#fff',
+      },
+      common: {
+        gray: '#808080',
+      },
+    },
+    components: {
+      MuiOutlinedInput: {
+        styleOverrides: {
+          root: {
+            backgroundColor: 'rgba(174, 171, 173, 0.2)',
+            borderRadius: 30,
+            border: 'none',
+            color: 'white',
+            height: 50,
+            width: 255,
+            transition: 'width .5s',
+            '&:focus-within': {
+              width: 320,
+            },
+          },
+          input: {
+            '&:-webkit-autofill': {
+              WebkitBoxShadow: '0 0 0 1000px  rgba(174, 171, 173, 0.2) inset',
+              WebkitTextFillColor: 'white',
+              transition: '1000000s ease-in-out',
+            },
+          },
+        },
+      },
+    },
+  });
 
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [searchValue, setSearchValue] = useState('');
-
-// fetch data
-useEffect(() => {
-  getMovieData(searchValue);
-}, [searchValue]);
-
-const getMovieData = async (searchValue) => {
-  setLoading(true);
-  const response = await fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=263d22d8`);
-  const responseJson = await response.json();
-  if (responseJson.Search) {
-    setItems(responseJson.Search);
-    }
-  setLoading(false);
-}
   return (
-    <SearchBar
-     searchValue={searchValue}
-     setSearchValue={setSearchValue}
-     items={items}
-     setItems={setItems}
-     loading={loading}/>
+      <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <MovieSearchApp />
+      </ThemeProvider>
   );
-}
+};
 
 export default App;
