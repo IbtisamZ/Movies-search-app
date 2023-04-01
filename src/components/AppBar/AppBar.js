@@ -4,12 +4,13 @@ import {
   TextField,
   Typography,
   InputAdornment,
+  AppBar as MUIAppBar,
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import GrainIcon from '@mui/icons-material/Grain';
 
 const AppBar = ({ searchValue = '', inputChange = () => { } }) => (
-    <AppBar
+    <MUIAppBar
         sx={{
           backgroundColor: 'transparent',
           boxShadow: 'none',
@@ -59,7 +60,7 @@ const AppBar = ({ searchValue = '', inputChange = () => { } }) => (
                 />
             </Box>
         </Toolbar>
-    </AppBar>
+    </MUIAppBar>
 );
 
 export default AppBar;
