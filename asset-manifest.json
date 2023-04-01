@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/Movies-search-react.js/static/css/main.8eeb7fcc.chunk.css",
-    "main.js": "/Movies-search-react.js/static/js/main.84834fc2.chunk.js",
-    "main.js.map": "/Movies-search-react.js/static/js/main.84834fc2.chunk.js.map",
-    "runtime-main.js": "/Movies-search-react.js/static/js/runtime-main.6d15f496.js",
-    "runtime-main.js.map": "/Movies-search-react.js/static/js/runtime-main.6d15f496.js.map",
-    "static/js/2.0498cb98.chunk.js": "/Movies-search-react.js/static/js/2.0498cb98.chunk.js",
-    "static/js/2.0498cb98.chunk.js.map": "/Movies-search-react.js/static/js/2.0498cb98.chunk.js.map",
-    "index.html": "/Movies-search-react.js/index.html",
-    "static/css/main.8eeb7fcc.chunk.css.map": "/Movies-search-react.js/static/css/main.8eeb7fcc.chunk.css.map",
-    "static/js/2.0498cb98.chunk.js.LICENSE.txt": "/Movies-search-react.js/static/js/2.0498cb98.chunk.js.LICENSE.txt",
-    "static/media/SearchBar.css": "/Movies-search-react.js/static/media/header-m-overlay.f1ca5bd3.jpeg"
+    "main.css": "/Movies-search-app/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/Movies-search-app/static/js/main.ddc0686e.chunk.js",
+    "main.js.map": "/Movies-search-app/static/js/main.ddc0686e.chunk.js.map",
+    "runtime-main.js": "/Movies-search-app/static/js/runtime-main.8b6edb5f.js",
+    "runtime-main.js.map": "/Movies-search-app/static/js/runtime-main.8b6edb5f.js.map",
+    "static/js/2.853d2ac9.chunk.js": "/Movies-search-app/static/js/2.853d2ac9.chunk.js",
+    "static/js/2.853d2ac9.chunk.js.map": "/Movies-search-app/static/js/2.853d2ac9.chunk.js.map",
+    "index.html": "/Movies-search-app/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/Movies-search-app/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.853d2ac9.chunk.js.LICENSE.txt": "/Movies-search-app/static/js/2.853d2ac9.chunk.js.LICENSE.txt",
+    "static/media/not-found.323f7926.jpeg": "/Movies-search-app/static/media/not-found.323f7926.jpeg",
+    "static/media/seinfeld-cast.cb8deced.jpeg": "/Movies-search-app/static/media/seinfeld-cast.cb8deced.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6d15f496.js",
-    "static/js/2.0498cb98.chunk.js",
-    "static/css/main.8eeb7fcc.chunk.css",
-    "static/js/main.84834fc2.chunk.js"
+    "static/js/runtime-main.8b6edb5f.js",
+    "static/js/2.853d2ac9.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.ddc0686e.chunk.js"
   ]
 }
