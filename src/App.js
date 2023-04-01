@@ -28,7 +28,7 @@ const App = () => {
             border: 'none',
             color: 'white',
             height: 50,
-            width: 255,
+            width: 210,
             transition: 'width .5s',
             '&:focus-within': {
               width: 320,
