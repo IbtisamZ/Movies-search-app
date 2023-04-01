@@ -36,6 +36,7 @@ const Hero = () => (
                 <Typography
                     variant="h3"
                     color="text.main"
+                    sx={{ fontWeight: 700 }}
                 >
                     Welcome to iMovies!
                 </Typography>
@@ -44,6 +45,7 @@ const Hero = () => (
                 <Typography
                     variant="h4"
                     color="text.main"
+                    sx={{ opacity: 0.5 }}
                 >
                     Search your favorite movies and shows.
                 </Typography>
